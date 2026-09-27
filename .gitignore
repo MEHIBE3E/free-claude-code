@@ -16,3 +16,12 @@ llama_cache
 .smoke-results
 /test-results/
 .vscode
+
+# Google AI Studio / service account secrets
+secrets/
+secrets/*.json
+.credentials.json
+
+# Local env files
+.env.local
+.env.*

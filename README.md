@@ -556,6 +556,37 @@ Windows PowerShell:
 - [Architecture and extension guide](ARCHITECTURE.md)
 - [Contributing guide](CONTRIBUTING.md)
 
+## Integrace: Google AI Studio (Generative AI)
+
+Krátce: tento repozitář obsahuje jednoduchý modul pro volání Google AI Studio (Generative AI) z Pythonu.
+
+Rychlý návod (Python):
+
+1. Nainstalujte závislosti:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+2. Nastavte API klíč:
+
+- Doporučeno: nastavte proměnnou prostředí GOOGLE_API_KEY s vaším API klíčem.
+- Alternativa: použijte service account a odpovídající způsob ověřování (např. GOOGLE_APPLICATION_CREDENTIALS).
+
+3. Spusťte ukázkový skript:
+
+```bash
+python examples/google_ai_studio_example.py
+```
+
+Vysvětlení:
+- integrations/google_ai_studio.py - lehký wrapper, který importuje oficiální knihovnu `google.generativeai` a zjednodušuje volání modelu.
+- examples/google_ai_studio_example.py - jednoduchý ukázkový skript ukazující základní použití.
+
+Bezpečnost:
+- Nikdy necommittujte tajné klíče do repozitáře.
+- Použijte proměnné prostředí nebo GitHub Secrets pro CI.
+
 ## License
 
 MIT License. See [LICENSE](LICENSE) for details.
