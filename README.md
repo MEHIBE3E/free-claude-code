@@ -586,6 +586,16 @@ Vysvětlení:
 Bezpečnost:
 - Nikdy necommittujte tajné klíče do repozitáře.
 - Použijte proměnné prostředí nebo GitHub Secrets pro CI.
+### Bezpečnost: co dělat, pokud unikl API klíč
+
+1. Okamžitě zrušte (revoke) nebo proveďte rotaci klíče u poskytovatele (např. v Google Cloud Console: smazat starý a vytvořit nový).
+2. Pokud byl klíč commitnut do repozitáře, odstraňte ho z pracovního stromu i z historie (viz poznámka níže).
+3. Spusťte lokální skener, např. `python scripts/scan_for_leaked_keys.py`, a opravte nalezené shody.
+
+Poznámka o odstranění z historie:
+- Nejbezpečnější postup je vytvořit zálohu a použít nástroj jako `git filter-repo` nebo BFG k úplnému odstranění citlivých hodnot z historie. To přepíše historii (rewrite) — budete muset force-pushnout a informovat spolupracovníky.
+
+Pokud chcete, mohu pomoci s příkazy pro `git filter-repo` nebo BFG — napište, který nástroj preferujete.
 
 ## License
 
